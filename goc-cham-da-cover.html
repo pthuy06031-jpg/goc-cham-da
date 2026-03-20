@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Góc Chăm Da</title>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:'Be Vietnam Pro',sans-serif; background:#F5E8EC; }
+
+    .cover {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 400px;
+      background: #F5E8EC;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .deco-bar { position:absolute; left:0; top:0; bottom:0; width:4px; background:#C4788A; opacity:0.2; }
+    .deco1 { position:absolute; width:200px; height:200px; border-radius:50%; background:#EDCED8; opacity:0.4; top:-60px; left:10px; pointer-events:none; }
+    .deco2 { position:absolute; width:70px; height:70px; border-radius:50%; background:#C4788A; opacity:0.07; bottom:20px; left:50px; pointer-events:none; }
+    .deco-star1 { position:absolute; top:55px; left:130px; font-size:20px; color:#C4788A; opacity:0.35; pointer-events:none; }
+    .deco-star2 { position:absolute; top:78px; left:158px; font-size:13px; color:#EDCED8; opacity:0.55; pointer-events:none; }
+    .deco-leaf { position:absolute; bottom:10px; left:20px; font-size:64px; opacity:0.12; pointer-events:none; line-height:1; }
+
+    .left {
+      padding: 3rem 2rem 3rem 2.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .main-title {
+      font-family:'DM Serif Display',serif;
+      font-size: clamp(32px, 4.5vw, 58px);
+      font-style: italic;
+      color: #2C1820;
+      line-height: 1.1;
+      margin-bottom: 18px;
+    }
+
+    .sub-title {
+      font-size: clamp(12px, 1.4vw, 14px);
+      font-style: italic;
+      font-weight: 300;
+      color: #7A3A4A;
+      line-height: 1.9;
+      max-width: 340px;
+    }
+
+    .right {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cover-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      min-height: 400px;
+    }
+
+    .img-fade {
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 35%;
+      background: linear-gradient(to right, #F5E8EC, transparent);
+      pointer-events: none;
+    }
+
+    @media (max-width: 768px) {
+      .cover { grid-template-columns: 1fr; min-height: unset; }
+      .right { order: 1; height: 55vw; max-height: 320px; }
+      .cover-img { min-height: unset; height: 100%; object-position: center 15%; }
+      .img-fade { width:100%; height:30%; top:auto; bottom:0; background: linear-gradient(to top, #F5E8EC, transparent); }
+      .left { order: 2; padding: 1.8rem 1.8rem 2rem; }
+      .main-title { font-size: clamp(30px, 6vw, 42px); margin-bottom:12px; }
+      .sub-title { font-size: 13px; max-width: 100%; }
+      .deco1 { width:120px; height:120px; top:-30px; }
+      .deco-leaf { font-size:44px; }
+    }
+
+    @media (max-width: 480px) {
+      .right { height: 65vw; max-height: 260px; }
+      .left { padding: 1.5rem 1.2rem 1.8rem; }
+      .main-title { font-size: clamp(28px, 8vw, 36px); }
+      .sub-title { font-size: 12px; line-height: 1.8; }
+      .deco-star1, .deco-star2 { display:none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="cover">
+    <div class="deco-bar"></div>
+    <div class="deco1"></div>
+    <div class="deco2"></div>
+    <div class="deco-star1">✦</div>
+    <div class="deco-star2">✦</div>
+    <div class="deco-leaf">🌿</div>
+    <div class="left">
+      <h1 class="main-title">Chăm sóc da</h1>
+      <p class="sub-title">Không có làn da xấu, chỉ có làn da chưa được hiểu đúng — và hành trình hiểu đó bắt đầu từ đây</p>
+    </div>
+    <div class="right">
+      <img class="cover-img" src="cover.jpg" alt="Chăm sóc da">
+      <div class="img-fade"></div>
+    </div>
+  </div>
+</body>
+</html>
